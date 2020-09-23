@@ -1,17 +1,20 @@
 import React from "react";
-import { Text } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
-
-import Box from "../components/Box";
 
 export default () => {
   return (
-    <Box color="#f00">
-      <Text>
-        Open up App.js to start working on your
-        app!
-      </Text>
-      <StatusBar style="auto" />
-    </Box>
+    <View>
+      <Text>Howdy</Text>
+      <StatusBar sytle="auto" />
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
