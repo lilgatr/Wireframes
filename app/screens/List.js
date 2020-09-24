@@ -1,18 +1,24 @@
 import React from "react";
-import { SafeAreaView, Text, StyleSheet, FlatList } from "react-native";
+import {
+  SafeAreaView,
+  View,
+  FlatList,
+  StyleSheet,
+  Text,
+  StatusBar,
+} from "react-native";
 
-import ListItem from "../components/ListItem";
+import Item from "../components/ListItem";
 import DATA from "../utils/Data";
 
 export default () => {
-  const renderListItem = (item) => (
-    <ListItem title={item.title} body={item.body} />
-  );
+  const renderItem = ({ item }) => <Item title={item.title} />;
+
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
         data={DATA}
-        renderItem={renderListItem}
+        renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
     </SafeAreaView>
@@ -21,13 +27,16 @@ export default () => {
 
 const styles = StyleSheet.create({
   container: {
-    width: "90%",
-    padding: 10,
-    marginVertical: 5,
-    marginHorizontal: 10,
+    flex: 1,
+    marginTop: StatusBar.currentHeight || 0,
+  },
+  item: {
     backgroundColor: "red",
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
   },
   title: {
-    fontSize: 20,
+    fontSize: 32,
   },
 });
