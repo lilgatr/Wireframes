@@ -9,12 +9,11 @@ const ListItem = ({ title, body }) => (
 );
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
-  },
   item: {
     backgroundColor: "tomato",
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "center",
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
